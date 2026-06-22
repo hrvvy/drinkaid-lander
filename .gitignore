@@ -1,0 +1,14 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+
+# Local tooling
+.claude/
+
+# Backups & superseded sources
+_backup_prior/
+assets/*-orig.png
+
+# Legacy external CSS/JS — the live page is self-contained in index.html
+styles.css
+script.js
