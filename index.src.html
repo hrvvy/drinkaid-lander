@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DrinkAid Gummies: The Clinically-Tested Anti-Hangover Gummy</title>
-  <meta name="description" content="DrinkAid Gummies are produced with Clear2x™, a clinically studied formulation that speeds up ALDH2, the enzyme that clears the toxin behind every hangover symptom. Citrus zest. Zero sugar. From $17.90." />
+  <meta name="description" content="DrinkAid Gummies are produced with Clear2x™, a clinically studied formulation that speeds up ALDH2, the enzyme that clears the toxin behind every hangover symptom. Citrus zest. Zero sugar. From S$2.39 a sachet." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
@@ -456,6 +456,25 @@ strong { font-weight: 700; }
 .price-card__price { font-weight: 900; font-size: 2.4rem; letter-spacing: -0.03em; color: var(--forest); line-height: 1; }
 .price-card__per { font-size: .92rem; color: var(--ink-soft); margin-top: 8px; font-weight: 600; }
 .save { color: var(--orange-text); font-weight: 800; }
+.price-card__pricerow { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.price-card__was { font-size: 1.1rem; font-weight: 700; color: var(--ink-soft); text-decoration: line-through; text-decoration-color: rgba(58,90,69,.55); }
+.price-card__free { color: var(--orange-text); font-weight: 800; }
+.price-card__badge--value { background: var(--orange); color: var(--forest-900); box-shadow: 0 6px 14px rgba(245,160,42,.45); }
+/* Bundle contents visualiser: paid pouches (mint) + free pouches (lime) */
+.bundle-viz { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; margin: 4px 0 16px; }
+.bundle-viz__row { display: inline-flex; align-items: flex-end; gap: 3px; }
+.bv-pouch {
+  width: 15px; height: 21px; border-radius: 4px 4px 3px 3px;
+  background: var(--mint-deep); border: 1.5px solid rgba(35,74,48,.45);
+  box-shadow: inset 0 -3px 0 rgba(35,74,48,.07);
+}
+.bv-pouch--free {
+  background: var(--lime); border-color: var(--lime-deep);
+  box-shadow: 0 2px 7px rgba(159,225,31,.5);
+}
+.bundle-viz__cap { font-size: .82rem; font-weight: 700; color: var(--ink-soft); }
+.bundle-viz__cap b { color: var(--forest); }
+.bundle-viz__cap .bv-free { color: var(--orange-text); }
 .price-card__meta { list-style: none; padding: 16px 0; margin: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; gap: 7px; }
 .price-card__meta li { font-size: .94rem; font-weight: 600; color: var(--forest); }
 .price-card__desc { font-size: .92rem; color: var(--ink-soft); line-height: 1.5; margin-bottom: 22px; flex: 1; }
@@ -599,7 +618,7 @@ strong { font-weight: 700; }
 .dash-list li::before { content: ""; position: absolute; left: 0; top: 11px; width: 14px; height: 3px; border-radius: 2px; background: var(--lime-deep); }
 .anchor__close { margin-top: 20px; font-weight: 800; font-size: 1.1rem; color: var(--forest); }
 
-/* "Why a gummy" — image + condensed stat reasons */
+/* "Why a gummy": image + condensed stat reasons */
 .whygummy { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(28px, 4vw, 56px); align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 3vw, 40px); box-shadow: var(--shadow-sm); margin-bottom: 28px; }
 .whygummy__media { margin: 0; }
 .whygummy__media img { width: 100%; border-radius: var(--radius-sm); display: block; background: var(--cream); }
@@ -611,7 +630,7 @@ strong { font-weight: 700; }
 .whygummy__stats li strong { color: var(--forest); }
 .whygummy__stats li::before { content: ""; position: absolute; left: 0; top: 10px; width: 14px; height: 3px; border-radius: 2px; background: var(--lime-deep); }
 
-/* "What it doesn't do" — 3 honest admissions with icons */
+/* "What it doesn't do": 3 honest admissions with icons */
 .dontdo { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(28px, 3.5vw, 44px); box-shadow: var(--shadow-sm); margin-bottom: 44px; }
 .dontdo__head { text-align: center; max-width: 56ch; margin: 0 auto 32px; }
 .dontdo__head .h3 { margin-bottom: 8px; }
@@ -1270,7 +1289,7 @@ video.hero__bear {
           </ul>
 
           <div class="hero__cta" data-reveal>
-            <a href="#pricing" class="btn btn--lg">Shop Hangover-Free Gummies From $17.90</a>
+            <a href="#pricing" class="btn btn--lg">Shop Hangover-Free Gummies From S$2.39 a Sachet</a>
             <span class="hero__rating">
               <span class="stars" aria-hidden="true">★★★★★</span>
               <span>4.7 stars · 500+ reviews</span>
@@ -1429,7 +1448,7 @@ video.hero__bear {
               <li>Dosing: 4 gummies, 15–30 minutes before your first drink. Optional: 4 more after your last drink for a heavy session.</li>
             </ul>
           </div>
-          <a href="#pricing" class="btn btn--lg" data-reveal>Shop DrinkAid Gummies From $17.90</a>
+          <a href="#pricing" class="btn btn--lg" data-reveal>Shop DrinkAid Gummies From S$2.39 a Sachet</a>
         </div>
       </div>
     </section>
@@ -1504,60 +1523,82 @@ video.hero__bear {
     <section class="section section--offer" id="pricing">
       <div class="container">
         <h2 class="h2 center" data-reveal>Finally, Now You Can Enjoy The Night Without Sacrificing Tomorrow.</h2>
-        <p class="offer__subhead center" data-reveal>Pick Your Pouch Today! There's no wrong answer, just better value the more nights you've got coming.</p>
+        <p class="offer__subhead center" data-reveal>One sachet every time you drink, the quiet dinner as much as the big night out. Buy a few pouches, we throw in the rest free, and every sachet gets cheaper. One pouch is 5 sachets, so 5 sessions sorted.</p>
 
         <div class="pricing">
           <article class="price-card" data-reveal>
-            <div class="price-card__media"><img class="price-card__img" src="assets/pouch-1-cut.png" alt="DrinkAid Gummies, 1 pouch (5 sachets)" /></div>
+            <div class="price-card__media"><img class="price-card__img" src="assets/pouch-5-cut.png" alt="DrinkAid Gummies, buy 4 pouches, get 1 free (5 pouches, 25 sachets)" /></div>
             <header class="price-card__head">
-              <p class="price-card__name">1× DrinkAid Gummies Pouch</p>
-              <p class="price-card__tag">Trying it out</p>
+              <p class="price-card__name">Buy 4, Get 1 Free</p>
+              <p class="price-card__tag">Try the habit</p>
             </header>
-            <p class="price-card__price">S$17.90</p>
-            <p class="price-card__per">S$17.90 / pouch</p>
+            <div class="price-card__pricerow">
+              <span class="price-card__price">S$71.60</span>
+              <span class="price-card__was">S$89.50</span>
+            </div>
+            <p class="price-card__per">S$2.86 / sachet · <span class="price-card__free">1 pouch free</span></p>
+            <div class="bundle-viz" aria-label="5 pouches total: 4 paid plus 1 free">
+              <span class="bundle-viz__row" aria-hidden="true"><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch bv-pouch--free"></i></span>
+              <span class="bundle-viz__cap"><b>5 pouches</b> · <span class="bv-free">1 free</span></span>
+            </div>
             <ul class="price-card__meta">
-              <li>5 sachets · 20 gummies</li>
-              <li>~5 nights out</li>
+              <li>25 sachets · 100 gummies</li>
+              <li>&asymp; 25 sessions</li>
             </ul>
-            <p class="price-card__desc">First-time buyers, gift-givers, anyone who wants to test the formula before committing.</p>
+            <p class="price-card__desc">New to it? Start here. One before your first drink, every time: the work dinner, the after-work pint, the quiet glass at home. Get the habit, then size up.</p>
             <a href="#" class="btn btn--block">Add To Cart</a>
           </article>
 
           <article class="price-card price-card--featured" data-reveal>
-            <div class="price-card__media"><img class="price-card__img" src="assets/pouch-3-cut.png" alt="DrinkAid Gummies, 3 pouches (15 sachets)" /></div>
+            <div class="price-card__media"><img class="price-card__img" src="assets/pouch-7-cut.png" alt="DrinkAid Gummies, buy 5 pouches, get 2 free (7 pouches, 35 sachets)" /></div>
             <span class="price-card__badge">Most popular</span>
             <header class="price-card__head">
-              <p class="price-card__name">3× DrinkAid Gummies Pouch</p>
-              <p class="price-card__tag">Regular Seasoned Drinker</p>
+              <p class="price-card__name">Buy 5, Get 2 Free</p>
+              <p class="price-card__tag">The regular's pick</p>
             </header>
-            <p class="price-card__price">S$49.41</p>
-            <p class="price-card__per">S$16.47 / pouch · <span class="save">Save S$4.29</span></p>
+            <div class="price-card__pricerow">
+              <span class="price-card__price">S$89.50</span>
+              <span class="price-card__was">S$125.30</span>
+            </div>
+            <p class="price-card__per">S$2.56 / sachet · <span class="price-card__free">2 pouches free</span></p>
+            <div class="bundle-viz" aria-label="7 pouches total: 5 paid plus 2 free">
+              <span class="bundle-viz__row" aria-hidden="true"><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch bv-pouch--free"></i><i class="bv-pouch bv-pouch--free"></i></span>
+              <span class="bundle-viz__cap"><b>7 pouches</b> · <span class="bv-free">2 free</span></span>
+            </div>
             <ul class="price-card__meta">
-              <li>15 sachets · 60 gummies</li>
-              <li>~15 nights out (a regular month)</li>
+              <li>35 sachets · 140 gummies</li>
+              <li>&asymp; 35 sessions</li>
             </ul>
-            <p class="price-card__desc">Anyone with 2–4 dinners/week. Wedding season warm-up. The default for most customers.</p>
+            <p class="price-card__desc">Drink most weeks? This is your default. One sachet every time you drink, not just the big ones, two pouches free, and you're stocked for a good while.</p>
             <a href="#" class="btn btn--block btn--solid">Add To Cart</a>
           </article>
 
           <article class="price-card" data-reveal>
-            <div class="price-card__media"><img class="price-card__img" src="assets/pouch-6-cut.png" alt="DrinkAid Gummies, 6 pouches (30 sachets)" /></div>
+            <div class="price-card__media"><img class="price-card__img" src="assets/pouch-9-cut.png" alt="DrinkAid Gummies, buy 6 pouches, get 3 free (9 pouches, 45 sachets)" /></div>
+            <span class="price-card__badge price-card__badge--value">Best value</span>
             <header class="price-card__head">
-              <p class="price-card__name">6× DrinkAid Gummies Pouch</p>
-              <p class="price-card__tag">Festivities / Work-Related Activities</p>
+              <p class="price-card__name">Buy 6, Get 3 Free</p>
+              <p class="price-card__tag">The staple</p>
             </header>
-            <p class="price-card__price">S$94.56</p>
-            <p class="price-card__per">S$15.76 / pouch · <span class="save">Save S$12.84</span></p>
+            <div class="price-card__pricerow">
+              <span class="price-card__price">S$107.40</span>
+              <span class="price-card__was">S$161.10</span>
+            </div>
+            <p class="price-card__per">S$2.39 / sachet · <span class="price-card__free">3 pouches free</span></p>
+            <div class="bundle-viz" aria-label="9 pouches total: 6 paid plus 3 free">
+              <span class="bundle-viz__row" aria-hidden="true"><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch bv-pouch--free"></i><i class="bv-pouch bv-pouch--free"></i><i class="bv-pouch bv-pouch--free"></i></span>
+              <span class="bundle-viz__cap"><b>9 pouches</b> · <span class="bv-free">3 free</span></span>
+            </div>
             <ul class="price-card__meta">
-              <li>30 sachets · 120 gummies</li>
-              <li>~30 nights out (Oct–Dec wedding season)</li>
+              <li>45 sachets · 180 gummies</li>
+              <li>&asymp; 45 sessions</li>
             </ul>
-            <p class="price-card__desc">Wedding season. CNY. Business entertaining. Share with the bridesmaid squad.</p>
+            <p class="price-card__desc">The lowest we go per sachet. For regulars and households who'd rather never run out, keep it stocked like the coffee.</p>
             <a href="#" class="btn btn--block">Add To Cart</a>
           </article>
         </div>
 
-        <p class="offer__note" data-reveal>Not sure? Most people start with 3. You'll be back for it anyway.</p>
+        <p class="offer__note" data-reveal>Not sure? Most regulars land on the Buy 5, Get 2. It's the one you'll keep reaching for. Free shipping on every bundle, plus a 30-day money-back guarantee, so the only thing you're risking is the hangover.</p>
       </div>
     </section>
 
@@ -1623,7 +1664,7 @@ video.hero__bear {
         </ul>
 
         <div class="center why-cta" data-reveal>
-          <a href="#pricing" class="btn btn--lg">Shop DrinkAid Gummies From $17.90</a>
+          <a href="#pricing" class="btn btn--lg">Shop DrinkAid Gummies From S$2.39 a Sachet</a>
         </div>
       </div>
     </section>
@@ -1674,7 +1715,7 @@ video.hero__bear {
 
         <p class="ugc__note center" data-reveal>4.7&#9733; from 500+ reviews. Real customers, real next-day mornings.</p>
         <div class="center" data-reveal>
-          <a href="#pricing" class="btn btn--lg">Shop DrinkAid Gummies From $17.90</a>
+          <a href="#pricing" class="btn btn--lg">Shop DrinkAid Gummies From S$2.39 a Sachet</a>
         </div>
       </div>
 
@@ -1733,7 +1774,7 @@ video.hero__bear {
             </details>
           </div>
 
-          <a href="#pricing" class="btn btn--lg ing2__cta" data-reveal>Shop DrinkAid Gummies From $17.90</a>
+          <a href="#pricing" class="btn btn--lg ing2__cta" data-reveal>Shop DrinkAid Gummies From S$2.39 a Sachet</a>
           <p class="ing2__foot" data-reveal>Full supplement facts on every pouch · GMP-certified facility · Third-party tested.</p>
         </div>
       </div>
@@ -1809,7 +1850,7 @@ video.hero__bear {
           <p class="dontdo__close">We tell you what we don't do because we want you to trust what we do.</p>
         </div>
         <div class="center" data-reveal>
-          <a href="#pricing" class="btn btn--lg">Shop DrinkAid Gummies From $17.90</a>
+          <a href="#pricing" class="btn btn--lg">Shop DrinkAid Gummies From S$2.39 a Sachet</a>
         </div>
       </div>
     </section>
@@ -1842,7 +1883,7 @@ video.hero__bear {
             <div class="rev-card__head"><span class="rev-card__avatar">T</span><div><p class="rev-card__name">TAN POONG <span class="rev-card__verified">Verified</span></p><p class="rev-card__date">17/06/2026</p></div></div>
             <h3 class="rev-card__h">DrinkAid helps reduce hangover symptoms like headaches and fatigue</h3>
             <p class="rev-card__body">DrinkAid helps reduce hangover symptoms like headaches and fatigue. Easy to take and convenient to carry. While not a complete cure, it makes recovery after drinking much easier.</p>
-            <a class="rev-card__for" href="#pricing"><span class="rev-card__thumb"><img src="assets/pouch-1-cut.png" alt="" loading="lazy" /></span><span><span class="rev-card__forlabel">Review for</span><span class="rev-card__forname">DrinkAid Gummies — Complete Alcohol Defence</span></span></a>
+            <a class="rev-card__for" href="#pricing"><span class="rev-card__thumb"><img src="assets/pouch-1-cut.png" alt="" loading="lazy" /></span><span><span class="rev-card__forlabel">Review for</span><span class="rev-card__forname">DrinkAid Gummies: Complete Alcohol Defence</span></span></a>
           </article>
 
           <article class="rev-card">
@@ -1850,7 +1891,7 @@ video.hero__bear {
             <div class="rev-card__head"><span class="rev-card__avatar">A</span><div><p class="rev-card__name">Anonymous <span class="rev-card__verified">Verified</span></p><p class="rev-card__date">15/06/2026</p></div></div>
             <h3 class="rev-card__h">Thanks DrinkAid!</h3>
             <p class="rev-card__body">I've had a great experience with DrinkAid. It's been effective for me in preventing hangovers, and the individually packed servings are super convenient and practical for longer storage. I would absolutely buy it again.</p>
-            <a class="rev-card__for" href="#pricing"><span class="rev-card__thumb"><img src="assets/pouch-1-cut.png" alt="" loading="lazy" /></span><span><span class="rev-card__forlabel">Review for</span><span class="rev-card__forname">DrinkAid Gummies — Complete Alcohol Defence</span></span></a>
+            <a class="rev-card__for" href="#pricing"><span class="rev-card__thumb"><img src="assets/pouch-1-cut.png" alt="" loading="lazy" /></span><span><span class="rev-card__forlabel">Review for</span><span class="rev-card__forname">DrinkAid Gummies: Complete Alcohol Defence</span></span></a>
           </article>
 
           <article class="rev-card">
@@ -1858,7 +1899,7 @@ video.hero__bear {
             <div class="rev-card__head"><span class="rev-card__avatar">A</span><div><p class="rev-card__name">Anonymous <span class="rev-card__verified">Verified</span></p><p class="rev-card__date">14/06/2026</p></div></div>
             <h3 class="rev-card__h">It is very effective</h3>
             <p class="rev-card__body">It is very effective. It helps with Asian flush by delaying it.</p>
-            <a class="rev-card__for" href="#pricing"><span class="rev-card__thumb"><img src="assets/pouch-1-cut.png" alt="" loading="lazy" /></span><span><span class="rev-card__forlabel">Review for</span><span class="rev-card__forname">DrinkAid Gummies — Complete Alcohol Defence</span></span></a>
+            <a class="rev-card__for" href="#pricing"><span class="rev-card__thumb"><img src="assets/pouch-1-cut.png" alt="" loading="lazy" /></span><span><span class="rev-card__forlabel">Review for</span><span class="rev-card__forname">DrinkAid Gummies: Complete Alcohol Defence</span></span></a>
           </article>
 
           <article class="rev-card">
@@ -1866,7 +1907,7 @@ video.hero__bear {
             <div class="rev-card__head"><span class="rev-card__avatar">R</span><div><p class="rev-card__name">Rachel T. <span class="rev-card__verified">Verified</span></p><p class="rev-card__date">11/06/2026</p></div></div>
             <h3 class="rev-card__h">Made my 9am with the kids</h3>
             <p class="rev-card__body">Took it before my company D&amp;D, had way more than I should've, and still made my 9am with the kids the next morning. No flush, no headache. I'm a convert.</p>
-            <a class="rev-card__for" href="#pricing"><span class="rev-card__thumb"><img src="assets/pouch-1-cut.png" alt="" loading="lazy" /></span><span><span class="rev-card__forlabel">Review for</span><span class="rev-card__forname">DrinkAid Gummies — Complete Alcohol Defence</span></span></a>
+            <a class="rev-card__for" href="#pricing"><span class="rev-card__thumb"><img src="assets/pouch-1-cut.png" alt="" loading="lazy" /></span><span><span class="rev-card__forlabel">Review for</span><span class="rev-card__forname">DrinkAid Gummies: Complete Alcohol Defence</span></span></a>
           </article>
 
           <article class="rev-card">
@@ -1874,7 +1915,7 @@ video.hero__bear {
             <div class="rev-card__head"><span class="rev-card__avatar">D</span><div><p class="rev-card__name">Daniel L. <span class="rev-card__verified">Verified</span></p><p class="rev-card__date">09/06/2026</p></div></div>
             <h3 class="rev-card__h">Finally something that works for the flush</h3>
             <p class="rev-card__body">I get red after half a beer. Two sachets before drinks and the flush was genuinely 70% gone. First thing that's ever actually done something for it.</p>
-            <a class="rev-card__for" href="#pricing"><span class="rev-card__thumb"><img src="assets/pouch-1-cut.png" alt="" loading="lazy" /></span><span><span class="rev-card__forlabel">Review for</span><span class="rev-card__forname">DrinkAid Gummies — Complete Alcohol Defence</span></span></a>
+            <a class="rev-card__for" href="#pricing"><span class="rev-card__thumb"><img src="assets/pouch-1-cut.png" alt="" loading="lazy" /></span><span><span class="rev-card__forlabel">Review for</span><span class="rev-card__forname">DrinkAid Gummies: Complete Alcohol Defence</span></span></a>
           </article>
         </div>
 
@@ -1918,7 +1959,7 @@ video.hero__bear {
           </details>
           <details class="faq__item">
             <summary>How much does it actually cost per use?<span class="faq__chevron" aria-hidden="true"></span></summary>
-            <div class="faq__body"><p>S$17.90 for 5 sachets = S$3.58 per night out (one sachet = one dose). Cheaper if you buy a 3-pack or 6-pack. Cheaper still on subscription with 10% off. For comparison: that's less than the cost of a single cocktail at most of the bars our customers go to.</p></div>
+            <div class="faq__body"><p>A single pouch is S$17.90 for 5 sachets, so S$3.58 a night (one sachet = one dose). Buy a few and we throw pouches in free, which drops it to as low as S$2.39 a sachet, with free shipping on every bundle. Either way, that's less than a single cocktail at most of the bars our customers go to.</p></div>
           </details>
           <details class="faq__item">
             <summary>Can I take it with medication?<span class="faq__chevron" aria-hidden="true"></span></summary>
@@ -1933,8 +1974,8 @@ video.hero__bear {
             <div class="faq__body"><p>30-day money-back guarantee. Try a pouch. If it doesn't work, email us. We'll refund. You keep the pouch. That's how confident we are.</p></div>
           </details>
           <details class="faq__item">
-            <summary>How does subscription work?<span class="faq__chevron" aria-hidden="true"></span></summary>
-            <div class="faq__body"><p>Pick your pouch quantity. Pick your delivery frequency (every 1, 2, or 3 months). Save 10% on every order. Skip a month anytime. Cancel anytime. No phone calls, no retention guilt-trips.</p></div>
+            <summary>I don't drink that often. Will I get through a bundle?<span class="faq__chevron" aria-hidden="true"></span></summary>
+            <div class="faq__body"><p>Then your bundle just lasts longer, no rush. Each sachet is individually sealed, so they keep well in a drawer until you need them. You're not buying for this week; you're buying for the nights you can't predict, the wedding, the work dinner, the Friday that escalates. Stock up once and you're covered.</p></div>
           </details>
           <details class="faq__item">
             <summary>Where can I buy it in person?<span class="faq__chevron" aria-hidden="true"></span></summary>
@@ -1942,7 +1983,7 @@ video.hero__bear {
           </details>
         </div>
         <div class="center" data-reveal>
-          <a href="#pricing" class="btn btn--lg">Shop DrinkAid Gummies From $17.90</a>
+          <a href="#pricing" class="btn btn--lg">Shop DrinkAid Gummies From S$2.39 a Sachet</a>
         </div>
       </div>
     </section>
@@ -1954,7 +1995,7 @@ video.hero__bear {
           <img src="assets/gummy-hero.png" alt="" />
         </div>
         <h2 class="finalcta__title">Drink what you want. Wake up like you didn't.</h2>
-        <a href="#pricing" class="btn btn--lg btn--invert">Shop DrinkAid Gummies From $17.90</a>
+        <a href="#pricing" class="btn btn--lg btn--invert">Shop DrinkAid Gummies From S$2.39 a Sachet</a>
         <p class="finalcta__guarantee">30-day money-back guarantee · 4.7 stars · 40,000+ happy customers</p>
       </div>
     </section>
@@ -1973,7 +2014,7 @@ video.hero__bear {
 
   <!-- ============ STICKY MOBILE CTA ============ -->
   <a href="#pricing" class="sticky-cta" data-sticky-cta>
-    <span>Shop gummies from $17.90</span>
+    <span>Shop gummies from S$2.39/sachet</span>
   </a>
 
   <script>
