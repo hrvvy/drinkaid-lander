@@ -475,6 +475,22 @@ strong { font-weight: 700; }
 .bundle-viz__cap { font-size: .82rem; font-weight: 700; color: var(--ink-soft); }
 .bundle-viz__cap b { color: var(--forest); }
 .bundle-viz__cap .bv-free { color: var(--orange-text); }
+/* Buy-section proof + reassurance (stronger reason to buy) */
+.offer__trust { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 28px; max-width: 900px; margin: 0 auto clamp(30px, 4.5vw, 46px); }
+.offer__trust li { font-size: .95rem; font-weight: 600; color: var(--forest); position: relative; }
+.offer__trust li:not(:last-child)::after { content: ""; position: absolute; right: -15px; top: 50%; width: 5px; height: 5px; border-radius: 50%; background: var(--lime-deep); transform: translateY(-50%); }
+.offer__trust-star { color: var(--orange); letter-spacing: 1px; margin-right: 5px; }
+.offer__assure { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 940px; margin: clamp(30px, 4vw, 44px) auto 0; }
+.offer__assure-item { display: flex; align-items: flex-start; gap: 13px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 17px 18px; box-shadow: var(--shadow-sm); }
+.offer__assure-ic { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--mint); color: var(--forest); display: grid; place-items: center; }
+.offer__assure-ic svg { width: 21px; height: 21px; }
+.offer__assure-item strong { display: block; font-size: .98rem; color: var(--forest); font-weight: 800; margin-bottom: 2px; }
+.offer__assure-item span { font-size: .87rem; color: var(--ink-soft); line-height: 1.45; }
+@media (max-width: 780px) { .offer__assure { grid-template-columns: 1fr; max-width: 460px; } }
+.offer__burn { max-width: 720px; margin: 0 auto clamp(34px, 4.5vw, 50px); background: var(--forest); color: var(--mint-soft); border-radius: var(--radius); padding: clamp(22px, 3.2vw, 30px) clamp(24px, 4vw, 40px); text-align: center; }
+.offer__burn-hook { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.3rem, 2.7vw, 1.7rem); color: var(--lime); line-height: 1.12; letter-spacing: -0.01em; margin-bottom: 10px; }
+.offer__burn-body { font-size: 1.02rem; line-height: 1.6; color: var(--mint-soft); max-width: 600px; margin: 0 auto; }
+.offer__burn-body b { color: var(--white); font-weight: 700; }
 .price-card__meta { list-style: none; padding: 16px 0; margin: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; gap: 7px; }
 .price-card__meta li { font-size: .94rem; font-weight: 600; color: var(--forest); }
 .price-card__desc { font-size: .92rem; color: var(--ink-soft); line-height: 1.5; margin-bottom: 22px; flex: 1; }
@@ -1205,7 +1221,7 @@ video.hero__bear {
 .price-card--featured .price-card__media { margin: -30px -28px 22px; }
 .price-card__img {
   display: block; width: auto; max-width: 100%; max-height: 100%;
-  filter: drop-shadow(0 18px 17px rgba(13,36,20,.24));
+  filter: drop-shadow(0 9px 12px rgba(13,36,20,.13));
   transition: transform .35s var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1346,7 +1362,7 @@ video.hero__bear {
     <section class="section section--prose">
       <div class="container problem__grid">
         <figure class="problem__media" data-reveal>
-          <img src="assets/pharmacy-choice.jpg" alt="A shopper standing in a Singapore pharmacy aisle, overwhelmed by the wall of hangover supplements, comparing two boxes." />
+          <img src="assets/pharmacy-choice.jpg" alt="A shopper in a Singapore pharmacy aisle, reaching for one of dozens of look-alike hangover supplements, unconvinced." />
           <figcaption>A hundred promises on the shelf. Almost none of them proven.</figcaption>
         </figure>
         <div class="problem__body">
@@ -1522,8 +1538,20 @@ video.hero__bear {
     <!-- ============ OFFER ============ -->
     <section class="section section--offer" id="pricing">
       <div class="container">
-        <h2 class="h2 center" data-reveal>Finally, Now You Can Enjoy The Night Without Sacrificing Tomorrow.</h2>
-        <p class="offer__subhead center" data-reveal>One sachet every time you drink, the quiet dinner as much as the big night out. Buy a few pouches, we throw in the rest free, and every sachet gets cheaper. One pouch is 5 sachets, so 5 sessions sorted.</p>
+        <h2 class="h2 center" data-reveal>Enjoy The Night. Own The Morning.</h2>
+        <p class="offer__subhead center" data-reveal>One sachet before you drink, big night or quiet one, and the morning stays yours. The more pouches you grab, the more value you get: extra pouches thrown in free, and a better price on every sachet.</p>
+
+        <ul class="offer__trust" data-reveal>
+          <li><span class="offer__trust-star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>4.7 from 500+ reviews</li>
+          <li>40,000+ Singaporeans trust it</li>
+          <li>100% natural &middot; 0g sugar</li>
+          <li>2,000,000+ doses taken</li>
+        </ul>
+
+        <div class="offer__burn" data-reveal>
+          <p class="offer__burn-hook">It runs out faster than you'd think.</p>
+          <p class="offer__burn-body">One before dinner. One before Friday drinks. One before the wedding you forgot you said yes to. Take it every time you drink and a small box is gone in a month, and the people who buy small are the ones reordering by next weekend, paying delivery twice, and caught reaching for an empty box the one night everyone was counting on them. <b>Buy enough that it's never you.</b></p>
+        </div>
 
         <div class="pricing">
           <article class="price-card" data-reveal>
@@ -1539,7 +1567,7 @@ video.hero__bear {
             <p class="price-card__per">S$2.86 / sachet · <span class="price-card__free">1 pouch free</span></p>
             <div class="bundle-viz" aria-label="5 pouches total: 4 paid plus 1 free">
               <span class="bundle-viz__row" aria-hidden="true"><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch bv-pouch--free"></i></span>
-              <span class="bundle-viz__cap"><b>5 pouches</b> · <span class="bv-free">1 free</span></span>
+              <span class="bundle-viz__cap"><b>Total 5 pouches</b></span>
             </div>
             <ul class="price-card__meta">
               <li>25 sachets · 100 gummies</li>
@@ -1563,7 +1591,7 @@ video.hero__bear {
             <p class="price-card__per">S$2.56 / sachet · <span class="price-card__free">2 pouches free</span></p>
             <div class="bundle-viz" aria-label="7 pouches total: 5 paid plus 2 free">
               <span class="bundle-viz__row" aria-hidden="true"><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch bv-pouch--free"></i><i class="bv-pouch bv-pouch--free"></i></span>
-              <span class="bundle-viz__cap"><b>7 pouches</b> · <span class="bv-free">2 free</span></span>
+              <span class="bundle-viz__cap"><b>Total 7 pouches</b></span>
             </div>
             <ul class="price-card__meta">
               <li>35 sachets · 140 gummies</li>
@@ -1587,7 +1615,7 @@ video.hero__bear {
             <p class="price-card__per">S$2.39 / sachet · <span class="price-card__free">3 pouches free</span></p>
             <div class="bundle-viz" aria-label="9 pouches total: 6 paid plus 3 free">
               <span class="bundle-viz__row" aria-hidden="true"><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch"></i><i class="bv-pouch bv-pouch--free"></i><i class="bv-pouch bv-pouch--free"></i><i class="bv-pouch bv-pouch--free"></i></span>
-              <span class="bundle-viz__cap"><b>9 pouches</b> · <span class="bv-free">3 free</span></span>
+              <span class="bundle-viz__cap"><b>Total 9 pouches</b></span>
             </div>
             <ul class="price-card__meta">
               <li>45 sachets · 180 gummies</li>
@@ -1598,7 +1626,22 @@ video.hero__bear {
           </article>
         </div>
 
-        <p class="offer__note" data-reveal>Not sure? Most regulars land on the Buy 5, Get 2. It's the one you'll keep reaching for. Free shipping on every bundle, plus a 30-day money-back guarantee, so the only thing you're risking is the hangover.</p>
+        <div class="offer__assure" data-reveal>
+          <div class="offer__assure-item">
+            <span class="offer__assure-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 2.6-6.4"/><path d="M3 4v4h4"/></svg></span>
+            <div><strong>30-day happiness guarantee</strong><span>Morning not different? Get in touch with us! We are more than willing to help.</span></div>
+          </div>
+          <div class="offer__assure-item">
+            <span class="offer__assure-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg></span>
+            <div><strong>Free shipping over $50</strong><span>Every bundle ships free, straight to your door.</span></div>
+          </div>
+          <div class="offer__assure-item">
+            <span class="offer__assure-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div><strong>Proof, not promises</strong><span>Clinically studied at NUS &amp; Temasek Poly.</span></div>
+          </div>
+        </div>
+
+        <p class="offer__note" data-reveal>Not sure? Most regulars land on the Buy 5, Get 2. It's the one you'll keep reaching for, and the only thing you're risking is the hangover.</p>
       </div>
     </section>
 
