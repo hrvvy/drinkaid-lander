@@ -9,6 +9,12 @@ Thumbs.db
 _backup_prior/
 assets/*-orig.png
 
+# Raw client photography (~196MB of full-res originals). Kept on disk as the
+# source everything in assets/ is derived from, but never committed: the site
+# only ever ships the web-sized crops next to it.
+assets/Pill Assets/
+.impeccable/
+
 # Legacy external CSS/JS — the live page is self-contained in index.html
 styles.css
 script.js
