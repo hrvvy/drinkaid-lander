@@ -1339,7 +1339,11 @@ video.hero__bear {
 @media (max-width: 860px) {
   .belief__top { grid-template-columns: 1fr; gap: 28px; }
   .belief__media { position: static; max-width: 460px; margin-inline: auto; order: 2; }
-  .belief__media img { aspect-ratio: 4 / 3; }
+  /* The shot is a 9:16 phone photo. Forcing it landscape here (it used to be
+     4/3, sized for the old horizontal image) cropped it to the middle 42% of
+     the frame, which cut off the top of her head and the base of the glass.
+     4/5 keeps 70% and holds the whole subject. */
+  .belief__media img { aspect-ratio: 4 / 5; }
 }
 
 /* ---- Problem-premise: image + text split to break up the copy ---- */
@@ -1805,7 +1809,7 @@ video.hero__bear {
           </div>
 
           <figure class="belief__media" data-reveal>
-            <img src="assets/pills-bar.jpg" alt="A man at an upscale bar smiling as he takes two DrinkAid capsules before drinking." />
+            <img src="assets/pills-bar-v2.jpg" alt="A woman at a bar night holding up her DrinkAid sachet next to a glass of sangria, mid game of boozy bingo." />
             <figcaption>Two capsules before the first drink. Enjoy the night. Wake up like you didn't.</figcaption>
           </figure>
         </div>
