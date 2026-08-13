@@ -1953,7 +1953,17 @@ video.hero__bear {
          then multiplied by quantity; per-sachet truncated), so the numbers here are
          the numbers the customer will see. On build it must become real Liquid:
          variant selector + the volume-discount app rendering the +5/8/12/15% tiers
-         + the subscription widget + working add-to-cart. -->
+         + the subscription widget + working add-to-cart.
+
+         GALLERY MUST FOLLOW THE VARIANT (client request, handled on Shopify):
+         selecting Original vs Sharing Pack has to swap the first gallery image to
+         that pack's carton, otherwise the buyer sees the same box whichever size
+         they pick. Deliberately not mocked here because Shopify already owns the
+         variant-to-featured-image binding; wiring a second mechanism in this file
+         would only have to be unpicked. Reference for whoever builds it: Original
+         is the narrow carton printed "12 CAPSULES (6 SERVINGS)"; Sharing Pack is
+         the wider 30-serving carton. Confirm against the SKU before assigning,
+         since both cartons appear in the same photo shoot. -->
     <section class="section section--offer" id="pricing">
       <div class="container">
         <h2 class="h2 center" data-reveal>Enjoy The Night. Own The Morning.</h2>
