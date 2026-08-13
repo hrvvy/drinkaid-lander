@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
   <style>
 /* ============================================================
-   DrinkAid Gummies - Long-Form Lander
+   DrinkAid Complete Alcohol Defence (capsules) - Long-Form Lander
    Built on Emil Kowalski's design-engineering principles.
    ============================================================ */
 
@@ -30,7 +30,7 @@
      2.1:1). --orange-text is the small-label foreground. --orange-mark is for
      graphic marks like rating stars, which need 3:1 against every light
      surface we use and only clear it from here down. */
-  --orange:      #f5a02a;   /* citrus gummy: surface, takes forest ink */
+  --orange:      #f5a02a;   /* citrus accent: surface, takes forest ink */
   --orange-deep: #e07d15;
   --orange-text: #9a520a;   /* AA-legible orange for small labels on light bg */
   --orange-mark: #b8690b;   /* graphic marks: 4.2 on white, 3.3 on mint-deep */
@@ -267,7 +267,7 @@ strong { font-weight: 700; }
 .hero__rating { display: inline-flex; align-items: center; gap: 9px; font-size: .92rem; font-weight: 600; color: var(--forest-700); }
 .stars { color: var(--orange-mark); letter-spacing: 1px; }
 
-/* Hero gummy */
+/* Hero product stage */
 .hero__visual { position: relative; display: flex; align-items: center; justify-content: center; }
 .hero__bear-stage { position: relative; width: min(100%, 460px); aspect-ratio: 1; display: grid; place-items: center; }
 .hero__ring {
@@ -764,16 +764,16 @@ strong { font-weight: 700; }
 .dash-list li::before { content: ""; position: absolute; left: 0; top: 11px; width: 14px; height: 3px; border-radius: 2px; background: var(--lime-deep); }
 .anchor__close { margin-top: 20px; font-weight: 800; font-size: 1.1rem; color: var(--forest); }
 
-/* "Why a gummy": image + condensed stat reasons */
-.whygummy { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(28px, 4vw, 56px); align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 3vw, 40px); box-shadow: var(--shadow-sm); margin-bottom: 28px; }
-.whygummy__media { margin: 0; }
-.whygummy__media img { width: 100%; border-radius: var(--radius-sm); display: block; background: var(--cream); }
-.whygummy__body .h3 { margin-bottom: 12px; }
-.whygummy__body > p { color: var(--ink-soft); font-size: 1.02rem; margin-bottom: 18px; }
-.whygummy__stats { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
-.whygummy__stats li { position: relative; padding-left: 26px; font-size: 1rem; color: var(--ink-soft); line-height: 1.5; }
-.whygummy__stats li strong { color: var(--forest); }
-.whygummy__stats li::before { content: ""; position: absolute; left: 0; top: 10px; width: 14px; height: 3px; border-radius: 2px; background: var(--lime-deep); }
+/* "Why the capsule": image + condensed stat reasons */
+.whycapsule { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(28px, 4vw, 56px); align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 3vw, 40px); box-shadow: var(--shadow-sm); margin-bottom: 28px; }
+.whycapsule__media { margin: 0; }
+.whycapsule__media img { width: 100%; border-radius: var(--radius-sm); display: block; background: var(--cream); }
+.whycapsule__body .h3 { margin-bottom: 12px; }
+.whycapsule__body > p { color: var(--ink-soft); font-size: 1.02rem; margin-bottom: 18px; }
+.whycapsule__stats { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.whycapsule__stats li { position: relative; padding-left: 26px; font-size: 1rem; color: var(--ink-soft); line-height: 1.5; }
+.whycapsule__stats li strong { color: var(--forest); }
+.whycapsule__stats li::before { content: ""; position: absolute; left: 0; top: 10px; width: 14px; height: 3px; border-radius: 2px; background: var(--lime-deep); }
 
 /* "What it doesn't do": 3 honest admissions with icons */
 .dontdo { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(28px, 3.5vw, 44px); box-shadow: var(--shadow-sm); margin-bottom: 44px; }
@@ -787,8 +787,8 @@ strong { font-weight: 700; }
 .dontdo__item p { color: var(--ink-soft); font-size: .96rem; line-height: 1.55; }
 .dontdo__close { text-align: center; margin-top: 30px; font-weight: 800; font-size: 1.1rem; color: var(--forest); }
 @media (max-width: 820px) {
-  .whygummy { grid-template-columns: 1fr; }
-  .whygummy__media { max-width: 340px; margin-inline: auto; }
+  .whycapsule { grid-template-columns: 1fr; }
+  .whycapsule__media { max-width: 340px; margin-inline: auto; }
   .dontdo__grid { grid-template-columns: 1fr; gap: 24px; }
   .dontdo__item { text-align: center; }
   .dontdo__icon { margin-inline: auto; }
@@ -984,7 +984,7 @@ strong { font-weight: 700; }
      is to make its column wider. 0.9/1.1 is the ceiling: at 0.85/1.15 the
      headline picks up an extra line and pushes the CTA down with it. */
   .hero__grid { grid-template-columns: 0.9fr 1.1fr; gap: clamp(24px, 2.6vw, 40px); }
-  /* Make the spinning gummy a much bigger focal point on desktop.
+  /* Make the hero product a much bigger focal point on desktop.
      flex-shrink:0 lets the stage exceed its column (centered, so it spills
      evenly into the gap/margin); the video scale zooms into the bear itself. */
   .hero__bear-stage { flex-shrink: 0; width: min(128%, 540px); }
@@ -1021,7 +1021,7 @@ strong { font-weight: 700; }
 @keyframes drift2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(6%, -4%) scale(1.1); } }
 @keyframes drift3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-5%, -6%) scale(1.12); } }
 
-/* Refine the white plate behind the gummy + glossy podium */
+/* Refine the white plate behind the product + glossy podium */
 .hero__ring {
   inset: 6%;
   background: radial-gradient(circle at 50% 40%, rgba(255,255,255,.95), rgba(233,251,238,.55) 55%, transparent 72%);
@@ -1055,7 +1055,7 @@ strong { font-weight: 700; }
 .nav[data-scrolled] { box-shadow: 0 6px 24px rgba(13,36,20,.06), inset 0 1px 0 rgba(255,255,255,.65); }
 @media (prefers-reduced-motion: reduce) { .hero__chip--3 { animation: none; } }
 
-/* ---- Hero spinning gummy (looping 360 turntable video) ---- */
+/* ---- Hero turntable video (unused on this lander; kept for the shared hero CSS) ---- */
 video.hero__bear {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
   z-index: 2; animation: none; filter: none; border-radius: 0;
@@ -1164,7 +1164,7 @@ video.hero__bear {
   padding: 34px 22px 18px; font-size: .95rem; font-weight: 600; line-height: 1.35;
   color: #fff; background: linear-gradient(transparent, rgba(13,36,20,.8));
 }
-/* ---- Ingredient breakdown: annotated gummy (left) + accordion (right) ---- */
+/* ---- Ingredient breakdown: annotated pack shot (left) + accordion (right) ---- */
 .breakdown {
   display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px);
   align-items: start; margin-bottom: clamp(40px, 5vw, 60px);
@@ -1245,7 +1245,7 @@ video.hero__bear {
   .breakdown__visual { position: static; width: 100%; max-width: 440px; margin-inline: auto; }
 }
 /* Small screens: drop the text labels (the accordion has the names) and
-   keep just the numbered dots centered on the gummy, still tappable. */
+   keep just the numbered dots centered on the pack shot, still tappable. */
 @media (max-width: 600px) {
   .hotspot__line, .hotspot__label { display: none; }
   .hotspot, .hotspot--left { transform: translate(-50%, -50%); }
@@ -2304,16 +2304,16 @@ video.hero__bear {
           </div>
         </div>
 
-        <div class="whygummy" data-reveal>
-          <figure class="whygummy__media">
+        <div class="whycapsule" data-reveal>
+          <figure class="whycapsule__media">
             <img src="assets/pills-capsule-cut.webp" alt="A DrinkAid capsule opened up, showing the layers of actives packed inside it." loading="lazy" />
           </figure>
-          <div class="whygummy__body">
-            <h3 class="h3">Why The Capsule Is Still The One We'd Bring To A Big Night.</h3>
-            <p>The capsule is the original DrinkAid, the one 40,000+ customers were built on, and it's still the most complete version of the formula we make:</p>
-            <ul class="whygummy__stats">
+          <div class="whycapsule__body">
+            <h3 class="h3">Why We'd Bring The Capsule To A Big Night.</h3>
+            <p>The capsule is the DrinkAid 40,000+ customers were built on, and it carries the formula in full:</p>
+            <ul class="whycapsule__stats">
               <li><strong>The full stack, not just the triad.</strong> Nine actives at 1,160mg. Clear2x™ plus the liver, energy, nerve and antioxidant support around it.</li>
-              <li><strong>Highest dose per serving.</strong> Two capsules carry more actives than any other format we make, and you can take two more after a heavy last drink.</li>
+              <li><strong>Room for a second dose.</strong> Two capsules before your first drink, and two more after your last if the night runs long.</li>
               <li><strong>Nothing you don't need.</strong> No sugar, no flavouring, no colouring. Just the actives and the capsule around them.</li>
               <li><strong>Lowest cost per night.</strong> Under S$2 a sachet on the Sharing Pack, which is less than the ++ on one cocktail.</li>
               <li><strong>Sealed and pocketable.</strong> One sachet in your wallet, one in the car, one in the desk drawer. They keep.</li>
@@ -2529,7 +2529,7 @@ video.hero__bear {
 
   <script>
 /* ============================================================
-   DrinkAid Gummies - interactions
+   DrinkAid Complete Alcohol Defence (capsules) - interactions
    Principles: transitions over keyframes for interruptible UI,
    ease-out for entrances, respect prefers-reduced-motion.
    ============================================================ */
@@ -2845,7 +2845,7 @@ video.hero__bear {
     });
   }
 
-  /* ---------- Hero spinning gummy: respect reduced motion + gate to viewport ----------
+  /* ---------- Hero turntable video: respect reduced motion + gate to viewport ----------
      A looping video decodes continuously even when scrolled off-screen, which pegs the
      compositor and makes embedded previews stutter. Pause it whenever the hero isn't
      visible; resume when it scrolls back in. */
@@ -2867,7 +2867,7 @@ video.hero__bear {
 
   /* ---------- Ingredient breakdown: accordion + hotspot sync ----------
      One item open at a time; clicking a hotspot opens its accordion item,
-     and the open item lights up its matching hotspot on the gummy. */
+     and the open item lights up its matching hotspot on the pack shot. */
   const ingItems = Array.from(document.querySelectorAll('.ing-acc__item'));
   const hotspots = Array.from(document.querySelectorAll('.hotspot'));
   if (ingItems.length) {
